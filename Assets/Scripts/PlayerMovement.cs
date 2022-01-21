@@ -31,7 +31,11 @@ public class PlayerMovement : MonoBehaviour
 
         coinText.GetComponent<Text>().text = "Coins Collected: " + coinsCollected;
 
-        if (coinsCollected == 4)
+        if (coinsCollected == 4 && SceneManager.GetActiveScene().name == "GamePlay_Level1")
+        {
+            SceneManager.LoadScene("GamePlay_Level2");
+        }
+        else if(coinsCollected == 4 && SceneManager.GetActiveScene().name == "GamePlay_Level2")
         {
             SceneManager.LoadScene("GameWin");
         }
